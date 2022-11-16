@@ -15,31 +15,65 @@ class updateItem {
 
   filterByName() {
     this.name = this.name.toLowerCase();
-    this.name === "brie"
-      ? this.updateBrieQuality()
+    this.name.includes("backstage")
+      ? this.updateBackstage()
+      : this.name === "brie"
+      ? this.updateBrie()
       : this.name === "sulfaras"
-      ? this.sulfarasQuality()
-      : this.updateItemQuality();
+      ? this.updateSulfaras()
+      : this.updateItem();
   }
 
-  updateItemQuality() {
+  updateItem() {
     this.sellIn -= 1;
-    this.sellIn <= 0
-      ? (this.quality -= 2)
+    this.quality > 50
+      ? this.maxQuality()
+      : this.sellIn <= 0
+      ? this.doubleQualityDecrease()
+      : this.standardQualityDecrease();
+  }
+
+  updateBrie() {
+    this.sellIn -= 1;
+    this.sellIn <= 10
+      ? this.doubleQualityIncrease()
+      : this.quality < 50
+      ? (this.quality += 1)
+      : this.maxQuality();
+  }
+
+  updateBackstage() {
+    this.sellIn -= 1;
+    this.sellIn <= 10
+      ? this.doubleQualityIncrease()
+      : this.quality < 50
+      ? (this.quality += 1)
+      : this.maxQuality();
+  }
+
+  updateSulfaras() {
+    this.sellIn -= 1;
+    this.quality = 80; //never changes
+  }
+
+  doubleQualityDecrease() {
+    this.quality -= 2;
+  }
+
+  doubleQualityIncrease() {
+    this.quality += 2;
+  }
+
+  maxQuality() {
+    this.quality = 50;
+  }
+
+  standardQualityDecrease() {
+    this.sellIn <= 10
+      ? this.doubleQualityIncrease()
       : this.quality > 0
       ? (this.quality -= 1)
       : (this.quality = 0);
-    return this.quality;
-  }
-
-  updateBrieQuality() {
-    this.sellIn -= 1;
-    this.quality += 1;
-  }
-
-  sulfarasQuality() {
-    this.sellIn -= 1;
-    this.quality = 80;
   }
 }
 

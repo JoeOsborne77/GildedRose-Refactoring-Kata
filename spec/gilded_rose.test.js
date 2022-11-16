@@ -4,19 +4,19 @@ const item = new Item();
 
 describe("Gilded Rose", () => {
   it("should return item sellIn days", () => {
-    const update = new updateItem(item, "Fine Ale", 10, 40);
+    const update = new updateItem(item, "Fine Ale", 12, 40);
     update.filterByName();
-    expect(update.sellIn).toBe(9);
+    expect(update.sellIn).toBe(11);
   });
 
   it("should return item sellIn days", () => {
-    const update = new updateItem(item, "Fine Ale", 10, 40);
+    const update = new updateItem(item, "Fine Ale", 12, 40);
     update.filterByName();
     expect(update.quality).toBe(39);
   });
 
   it("should never return < 0 for quality", () => {
-    const update = new updateItem(item, "Fine Ale", 10, -40);
+    const update = new updateItem(item, "Fine Ale", 12, -40);
     update.filterByName();
     expect(update.quality).toBe(0);
   });
@@ -28,8 +28,21 @@ describe("Gilded Rose", () => {
   });
 
   it("should increase brie quality with time", () => {
-    const update = new updateItem(item, "Brie", 10, 40);
+    const update = new updateItem(item, "Brie", 15, 40);
     update.filterByName();
+    expect(update.sellIn).toBe(14);
+    expect(update.quality).toBe(41);
+  });
+
+  it("should increase backstage quality with time", () => {
+    const update = new updateItem(
+      item,
+      "Backstage pass to see The Juggernauts",
+      12,
+      40
+    );
+    update.filterByName();
+    expect(update.sellIn).toBe(11);
     expect(update.quality).toBe(41);
   });
 

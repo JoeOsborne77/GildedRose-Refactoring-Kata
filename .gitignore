@@ -1,3 +1,4 @@
+node_modules
 bin
 obj
 *.sln.DotSettings.user
@@ -5,4 +6,3 @@ obj
 vendor
 .idea
 *.iml
-node_modules

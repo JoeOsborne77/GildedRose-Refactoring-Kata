@@ -15,7 +15,9 @@ class updateItem {
 
   filterByName() {
     this.name = this.name.toLowerCase();
-    this.name.includes("backstage")
+    this.name.includes("conjured")
+      ? this.updateConjured()
+      : this.name.includes("backstage")
       ? this.updateBackstage()
       : this.name === "brie"
       ? this.updateBrie()
@@ -28,14 +30,26 @@ class updateItem {
     this.sellIn -= 1;
     this.quality > 50
       ? this.maxQuality()
-      : this.sellIn <= 0
+      : this.sellIn < 0
       ? this.doubleQualityDecrease()
+      : this.sellIn <= 3
+      ? this.tripleQualityIncrease()
       : this.standardQualityDecrease();
+  }
+
+  standardQualityDecrease() {
+    this.sellIn <= 10
+      ? this.doubleQualityIncrease()
+      : this.quality > 0
+      ? (this.quality -= 1)
+      : (this.quality = 0);
   }
 
   updateBrie() {
     this.sellIn -= 1;
-    this.sellIn <= 10
+    this.sellIn <= 3
+      ? this.tripleQualityIncrease()
+      : this.sellIn <= 10
       ? this.doubleQualityIncrease()
       : this.quality < 50
       ? (this.quality += 1)
@@ -44,11 +58,20 @@ class updateItem {
 
   updateBackstage() {
     this.sellIn -= 1;
-    this.sellIn <= 10
+    this.sellIn < 0
+      ? this.lowestQuality()
+      : this.sellIn <= 5
+      ? this.tripleQualityIncrease()
+      : this.sellIn <= 10
       ? this.doubleQualityIncrease()
       : this.quality < 50
       ? (this.quality += 1)
       : this.maxQuality();
+  }
+
+  updateConjured() {
+    this.sellIn -= 1;
+    this.quality -= 2;
   }
 
   updateSulfaras() {
@@ -64,16 +87,16 @@ class updateItem {
     this.quality += 2;
   }
 
+  tripleQualityIncrease() {
+    this.quality += 3;
+  }
+
   maxQuality() {
     this.quality = 50;
   }
 
-  standardQualityDecrease() {
-    this.sellIn <= 10
-      ? this.doubleQualityIncrease()
-      : this.quality > 0
-      ? (this.quality -= 1)
-      : (this.quality = 0);
+  lowestQuality() {
+    this.quality = 0;
   }
 }
 

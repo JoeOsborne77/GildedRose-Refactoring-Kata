@@ -1,17 +1,15 @@
-const Item = require("./item");
-// const Conjured = require("./conjured");
-// const conjured = new Conjured();
+const Conjured = require("./conjured");
+const standardItem = require("./standardItem");
+const Brie = require("./brie");
+const Backstage = require("./backstage");
+const Sulfaras = require("./sulfaras.js");
+
 class updateItem {
-  constructor(item, name, sellIn, quality) {
-    //inject item and arguments
-    this.item = new Item();
-    this.item.name = name;
-    this.item.sellIn = sellIn;
-    this.item.quality = quality;
-    // rename variables to make cleaner
-    this.name = this.item.name;
-    this.sellIn = this.item.sellIn;
-    this.quality = this.item.quality;
+  constructor(item) {
+    this.item = item;
+    this.name = item.name;
+    this.sellIn = item.sellIn;
+    this.quality = item.quality;
   }
 
   filterByName() {
@@ -28,78 +26,28 @@ class updateItem {
   }
 
   updateItem() {
-    this.sellIn -= 1;
-    this.quality > 50
-      ? this.maxQuality()
-      : this.sellIn < 0
-      ? this.doubleQualityDecrease()
-      : this.sellIn <= 3
-      ? this.tripleQualityIncrease()
-      : this.standardQualityDecrease();
-  }
-
-  standardQualityDecrease() {
-    this.sellIn <= 10
-      ? this.doubleQualityIncrease()
-      : this.quality > 0
-      ? (this.quality -= 1)
-      : (this.quality = 0);
+    const standarditem = new standardItem(this.item);
+    standarditem.update();
   }
 
   updateBrie() {
-    this.sellIn -= 1;
-    this.sellIn <= 3
-      ? this.tripleQualityIncrease()
-      : this.sellIn <= 10
-      ? this.doubleQualityIncrease()
-      : this.quality < 50
-      ? (this.quality += 1)
-      : this.maxQuality();
+    const brie = new Brie(this.item);
+    brie.update();
   }
 
   updateBackstage() {
-    this.sellIn -= 1;
-    this.sellIn < 0
-      ? this.lowestQuality()
-      : this.sellIn <= 5
-      ? this.tripleQualityIncrease()
-      : this.sellIn <= 10
-      ? this.doubleQualityIncrease()
-      : this.quality < 50
-      ? (this.quality += 1)
-      : this.maxQuality();
+    const backstage = new Backstage(this.item);
+    backstage.update();
   }
 
   updateConjured() {
-    this.sellIn -= 1;
-    this.quality -= 2;
-    // const conjured = new Conjured();
-    // conjured.update();
+    const conjured = new Conjured(this.item);
+    conjured.update();
   }
 
   updateSulfaras() {
-    this.sellIn -= 1;
-    this.quality = 80; //never changes
-  }
-
-  doubleQualityDecrease() {
-    this.quality -= 2;
-  }
-
-  doubleQualityIncrease() {
-    this.quality += 2;
-  }
-
-  tripleQualityIncrease() {
-    this.quality += 3;
-  }
-
-  maxQuality() {
-    this.quality = 50;
-  }
-
-  lowestQuality() {
-    this.quality = 0;
+    const sulfaras = new Sulfaras(this.item);
+    sulfaras.update();
   }
 }
 

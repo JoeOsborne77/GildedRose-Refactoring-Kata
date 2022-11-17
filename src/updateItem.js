@@ -1,5 +1,6 @@
 const Item = require("./item");
-
+const Conjured = require("./conjured");
+const conjured = new Conjured();
 class updateItem {
   constructor(item, name, sellIn, quality) {
     //inject item and arguments

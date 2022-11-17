@@ -1,10 +1,10 @@
 const Item = require("./item");
-const Conjured = require("./conjured");
-const conjured = new Conjured();
+// const Conjured = require("./conjured");
+// const conjured = new Conjured();
 class updateItem {
   constructor(item, name, sellIn, quality) {
     //inject item and arguments
-    this.item = item;
+    this.item = new Item();
     this.item.name = name;
     this.item.sellIn = sellIn;
     this.item.quality = quality;
@@ -73,6 +73,8 @@ class updateItem {
   updateConjured() {
     this.sellIn -= 1;
     this.quality -= 2;
+    // const conjured = new Conjured();
+    // conjured.update();
   }
 
   updateSulfaras() {

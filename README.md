@@ -17,6 +17,11 @@ $ NPM install
 4. Run tests with;
 
 $ jest
+
+5. See coverage with;
+
+$ jest --coverage
+
 ```
 
 ## RESULTS

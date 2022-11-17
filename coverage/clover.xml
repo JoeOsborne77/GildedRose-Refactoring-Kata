@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1668688102122" clover="3.2.0">
+  <project timestamp="1668688102122" name="All files">
+    <metrics statements="61" coveredstatements="61" conditionals="50" coveredconditionals="50" methods="33" coveredmethods="33" elements="144" coveredelements="144" complexity="0" loc="61" ncloc="61" packages="1" files="7" classes="7"/>
+    <file name="backstage.js" path="/Users/joe/Documents/GildedRose-Refactoring-Kata/src/backstage.js">
+      <metrics statements="9" coveredstatements="9" conditionals="14" coveredconditionals="14" methods="7" coveredmethods="7"/>
+      <line num="3" count="5" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="8" count="5" type="cond" truecount="4" falsecount="0"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="27" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+      <line num="39" count="1" type="stmt"/>
+    </file>
+    <file name="brie.js" path="/Users/joe/Documents/GildedRose-Refactoring-Kata/src/brie.js">
+      <metrics statements="8" coveredstatements="8" conditionals="10" coveredconditionals="10" methods="6" coveredmethods="6"/>
+      <line num="3" count="4" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="8" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+    </file>
+    <file name="conjured.js" path="/Users/joe/Documents/GildedRose-Refactoring-Kata/src/conjured.js">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+    <file name="item.js" path="/Users/joe/Documents/GildedRose-Refactoring-Kata/src/item.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="21" type="stmt"/>
+      <line num="4" count="21" type="stmt"/>
+      <line num="5" count="21" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+    </file>
+    <file name="standardItem.js" path="/Users/joe/Documents/GildedRose-Refactoring-Kata/src/standardItem.js">
+      <metrics statements="10" coveredstatements="10" conditionals="16" coveredconditionals="16" methods="8" coveredmethods="8"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="6" count="8" type="stmt"/>
+      <line num="7" count="8" type="cond" truecount="4" falsecount="0"/>
+      <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="33" count="1" type="stmt"/>
+      <line num="37" count="1" type="stmt"/>
+      <line num="41" count="1" type="stmt"/>
+    </file>
+    <file name="sulfaras.js" path="/Users/joe/Documents/GildedRose-Refactoring-Kata/src/sulfaras.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="3" count="2" type="stmt"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+    </file>
+    <file name="updateItem.js" path="/Users/joe/Documents/GildedRose-Refactoring-Kata/src/updateItem.js">
+      <metrics statements="22" coveredstatements="22" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="9" count="21" type="stmt"/>
+      <line num="10" count="21" type="stmt"/>
+      <line num="11" count="21" type="stmt"/>
+      <line num="12" count="21" type="stmt"/>
+      <line num="16" count="21" type="stmt"/>
+      <line num="17" count="21" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="8" type="stmt"/>
+      <line num="30" count="8" type="stmt"/>
+      <line num="34" count="4" type="stmt"/>
+      <line num="35" count="4" type="stmt"/>
+      <line num="39" count="5" type="stmt"/>
+      <line num="40" count="5" type="stmt"/>
+      <line num="44" count="2" type="stmt"/>
+      <line num="45" count="2" type="stmt"/>
+      <line num="49" count="2" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="54" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>

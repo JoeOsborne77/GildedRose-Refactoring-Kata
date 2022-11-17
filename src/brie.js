@@ -5,13 +5,17 @@ class Brie {
 
   update() {
     this.item.sellIn -= 1;
-    this.item.sellIn <= 3
+    this.item.sellIn <= 3 && this.item.quality < 50
       ? this.tripleQualityIncrease()
-      : this.item.sellIn <= 10
+      : this.item.sellIn <= 10 && this.item.quality < 50
       ? this.doubleQualityIncrease()
       : this.item.quality < 50
-      ? (this.item.quality += 1)
+      ? this.standardQualityIncrease()
       : this.maxQuality();
+  }
+
+  standardQualityIncrease() {
+    this.item.quality += 1;
   }
 
   doubleQualityIncrease() {

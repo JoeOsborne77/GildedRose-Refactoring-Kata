@@ -18,5 +18,8 @@
   "homepage": "https://github.com/JoeOsborne77/GildedRose-Refactoring-Kata#readme",
   "dependencies": {
     "jest": "^29.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0"
   }
 }

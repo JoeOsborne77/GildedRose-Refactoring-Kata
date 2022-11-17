@@ -4,7 +4,7 @@ class Conjured {
   }
   update() {
     this.item.sellIn -= 1;
-    this.item.quality -= 2;
+    this.item.quality > 2 ? (this.item.quality -= 2) : (this.item.quality = 0);
   }
 }
 
